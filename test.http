@@ -1,0 +1,30 @@
+GET http://localhost:3000/api/members
+
+###
+GET http://localhost:3000/api/members?team=Engineering
+
+###
+GET http://localhost:3000/api/members/3
+
+###
+POST http://localhost:3000/api/members
+Content-Type: application/json
+
+{
+    "id": 3,
+    "name": "John",
+    "team": "Sales"
+}
+
+###
+PUT http://localhost:3000/api/members/1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "name": "Jake",
+    "team": "Marketing"
+}
+
+###
+DELETE http://localhost:3000/api/members/1
