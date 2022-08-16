@@ -1,21 +1,36 @@
 'use strict';
+
+const sequelize = require("sequelize");
+
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Members', {
+    await queryInterface.createTable('Safety', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      date: {
+        type: Sequelize.DATEONLY
+      },
+      safety_target: {
+        type: Sequelize.INTEGER
+      },
+      safety_free: {
+        type: Sequelize.INTEGER
+      },
+      today: {
+        type: Sequelize.DATEONLY
+      },
+      safety_text1: {
         type: Sequelize.STRING
       },
-      team: {
+      safety_text2: {
         type: Sequelize.STRING
       },
-      admin: {
-        type: Sequelize.BOOLEAN
+      safety_text3: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -31,6 +46,6 @@ module.exports = {
     { sequelize:sequelize, timestamps: true });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Members');
+    await queryInterface.dropTable('Safety');
   }
 };

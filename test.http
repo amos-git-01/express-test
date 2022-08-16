@@ -11,20 +11,20 @@ POST http://localhost:3000/api/members
 Content-Type: application/json
 
 {
-    "id": 3,
-    "name": "John",
+   
+    "name": "Mike",
     "team": "Sales"
 }
 
 ###
-PUT http://localhost:3000/api/members/1
+PUT http://localhost:3000/api/members/7
 Content-Type: application/json
 
 {
     "id": 1,
-    "name": "Jake",
+    "name": "Tom",
     "team": "Marketing"
 }
 
 ###
-DELETE http://localhost:3000/api/members/1
+DELETE http://localhost:3000/api/members/5

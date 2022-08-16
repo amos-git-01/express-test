@@ -107,7 +107,8 @@ module.exports = {
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn('now'),
       }
-    });
+    },
+    { sequelize:sequelize, timestamps: true });
   },
 
   async down (queryInterface, Sequelize) {

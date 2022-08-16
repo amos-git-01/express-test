@@ -23,3 +23,12 @@ const Works = require('./works')(sequelize, Sequelize.DataTypes);
 db.Works = Works;
 
 module.exports = db;
+
+
+(async () => {
+  // await sequelize.sync({ force: true });
+  await Progress.sync();
+  await Quantities.sync();
+  await Safety.sync();
+  await Works.sync();
+})();
