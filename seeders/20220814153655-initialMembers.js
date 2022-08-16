@@ -7,11 +7,13 @@ module.exports = {
         id: 1,
         name: 'Alex',
         team: "Marketing",
+        admin: true
     },
     {
         id: 2,
         name: 'Tom',
         team: "Engineering",
+        admin: false
     },
   ]);
 

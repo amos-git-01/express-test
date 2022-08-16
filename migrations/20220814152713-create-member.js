@@ -14,6 +14,9 @@ module.exports = {
       team: {
         type: Sequelize.STRING
       },
+      admin: {
+        type: Sequelize.BOOLEAN
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

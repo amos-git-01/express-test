@@ -1,5 +1,7 @@
 const express = require('express');
+const { Sequelize } = require('sequelize/types');
 const app = express();
+// sequelize.sync();
 
 const db = require('./models');
 
@@ -34,17 +36,6 @@ app.post('/api/members', async (req,res) => {
     await member.save();
     res.send(member);
 });
-
-// app.put('/api/members/:id', async (req,res) => {
-//     const { id } = req.params;
-//     const newInfo = req.body;
-//     const result = await Member.update(newInfo, { where: { id } });
-//     if (result[0]) {
-//         res.send({ message: `${result[0]} row(s) affected`});
-//     } else {
-//         res.status(404).send({message: 'There is no member with the ID'});
-//     }
-// });
 
 app.put('/api/members/:id', async (req, res) => {
     const { id } = req.params;

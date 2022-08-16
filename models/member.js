@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER
     },
     name: DataTypes.STRING,
-    team: DataTypes.STRING
+    team: DataTypes.STRING,
+    admin: DataTypes.BOOLEAN,
   }, {
     sequelize,
     modelName: 'Member',
