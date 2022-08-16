@@ -10,6 +10,9 @@ const sequelize = new Sequelize(database, username, password, {
   dialect,
 });
 
+const Member = require('./member')(sequelize, Sequelize.DataTypes);
+db.Member = Member;
+
 const Progress = require('./progress')(sequelize, Sequelize.DataTypes);
 db.Progress = Progress;
 
@@ -27,6 +30,7 @@ module.exports = db;
 
 (async () => {
   // await sequelize.sync({ force: true });
+  await Member.sync();
   await Progress.sync();
   await Quantities.sync();
   await Safety.sync();

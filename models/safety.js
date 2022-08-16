@@ -9,9 +9,9 @@ module.exports = (sequelize, DataTypes) => {
     safety_target: DataTypes.INTEGER,
     safety_free: DataTypes.INTEGER,
     today: DataTypes.DATEONLY,
-    safety_text1: Sequelize.STRING,
-    safety_text2: Sequelize.STRING,
-    safety_text3: Sequelize.STRING,
+    safety_text1: DataTypes.STRING,
+    safety_text2: DataTypes.STRING,
+    safety_text3: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Safety',
