@@ -5,6 +5,10 @@ const app = express();
 const db = require('./models');
 
 const { Member } = db;
+const { Progress } = db;
+const { Safety } = db;
+const { Works } = db;
+const { Quantities } = db;
 
 
 app.use(express.json());
@@ -17,6 +21,50 @@ app.get('/api/members', async (req,res) => {
     } else {
         const members = await Member.findAll();
         res.send(members);
+    }
+});
+
+app.get('/api/progress', async (req,res) => {
+    const { date } = req.query;
+    if (date) {
+        const dateProgress = await Progress.findAll({ where: { date } });
+        res.send(dateProgress);
+    } else {
+        const progress = await Progress.findAll();
+        res.send(progress);
+    }
+});
+
+app.get('/api/safety', async (req,res) => {
+    const { date } = req.query;
+    if (date) {
+        const dateSafety = await Safety.findAll({ where: { date } });
+        res.send(dateSafety);
+    } else {
+        const safety = await Safety.findAll();
+        res.send(safety);
+    }
+});
+
+app.get('/api/works', async (req,res) => {
+    const { date } = req.query;
+    if (date) {
+        const dateWorks = await Works.findAll({ where: { date } });
+        res.send(dateWorks);
+    } else {
+        const works = await Works.findAll();
+        res.send(works);
+    }
+});
+
+app.get('/api/quantities', async (req,res) => {
+    const { date } = req.query;
+    if (date) {
+        const dateQuantities = await Quantities.findAll({ where: { date } });
+        res.send(dateQuantities);
+    } else {
+        const quantities = await Quantities.findAll();
+        res.send(quantities);
     }
 });
 
@@ -36,17 +84,6 @@ app.post('/api/members', async (req,res) => {
     await member.save();
     res.send(member);
 });
-
-// app.put('/api/members/:id', async (req,res) => {
-//     const { id } = req.params;
-//     const newInfo = req.body;
-//     const result = await Member.update(newInfo, { where: { id } });
-//     if (result[0]) {
-//         res.send({ message: `${result[0]} row(s) affected`});
-//     } else {
-//         res.status(404).send({message: 'There is no member with the ID'});
-//     }
-// });
 
 app.put('/api/members/:id', async (req, res) => {
     const { id } = req.params;

@@ -42,6 +42,7 @@ module.exports = (sequelize, DataTypes) => {
     prog_actl_disc_PT: DataTypes.INTEGER,
     prog_plan_disc_TTL: DataTypes.INTEGER,
     prog_actl_disc_TTL: DataTypes.INTEGER,
+
   
   }, {
     sequelize,

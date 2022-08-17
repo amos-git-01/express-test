@@ -15,6 +15,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Safety',
+    freezeTableName: true,
+    tableName: 'Safety'
   });
   return Safety;
 };

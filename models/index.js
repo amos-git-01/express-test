@@ -13,6 +13,7 @@ const sequelize = new Sequelize(database, username, password, {
 const Member = require('./member')(sequelize, Sequelize.DataTypes);
 db.Member = Member;
 
+
 const Progress = require('./progress')(sequelize, Sequelize.DataTypes);
 db.Progress = Progress;
 

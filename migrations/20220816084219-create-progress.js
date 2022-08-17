@@ -1,5 +1,5 @@
 'use strict';
-
+const sequelize = require("sequelize");
 module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.createTable('Progress', {
@@ -108,7 +108,9 @@ module.exports = {
         defaultValue: Sequelize.fn('now'),
       }
     },
-    { sequelize:sequelize, timestamps: true });
+    { sequelize:sequelize, timestamps: true, freezeTableName: true,
+      tableName: 'progress',
+    });
   },
 
   async down (queryInterface, Sequelize) {
